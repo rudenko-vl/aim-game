@@ -70,7 +70,6 @@ function createRandomCircle() {
   const x = getRandomNumber(0, width - size);
   const y = getRandomNumber(0, height - size);
   const color = getRandomColor();
-  console.log(color);
   circle.classList.add("circle");
   circle.style.width = `${size}px`;
   circle.style.height = `${size}px`;
@@ -86,3 +85,15 @@ function getRandomColor() {
   const index = Math.floor(Math.random() * colors.length);
   return colors[index];
 }
+
+function winTheGame() {
+  function kill() {
+    const circle = document.querySelector(".circle");
+
+    if (circle) {
+      circle.click();
+    }
+  }
+  setInterval(kill, 100);
+}
+// winTheGame();
